@@ -1,1 +1,32 @@
+===== LSBLK =====
 
+$ lsblk -f
+
+NAME                         FSTYPE      FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+sda
+├─sda1
+├─sda2                       ext4        1.0         90993b56-66ef-4126-aaa1-aeb1d87da50b   1,4G    11% /boot
+└─sda3                       LVM2_member LVM2 001    Tq1Aqa-rwLI-mu1-mKX3-pt0D-d4Py-9RWUok
+  ├─ubuntu--vg-ubuntu--lv    ext4        1.0         d9f35105-a595-4dfb-a6d1-7e678a0941d3   5,2G    41% /
+  ├─ubuntu--vg-var           ext4        1.0         bf5ed240-ae45-46b7-b690-f780ea0f1ae5
+  ├─ubuntu--vg-var_log       ext4        1.0         dfc3ab33-176c-455c-9958-59c03a2512da
+  └─ubuntu--vg-home          ext4        1.0         c213a42a-83e3-4da8-84c5-3a213087cff1
+
+sr0                          iso9660     Joliet Extension Ubuntu-Server 24.04.3 LTS amd64
+
+===== VGS =====
+
+$ sudo vgs
+
+VG         #PV #LV #SN Attr   VSize   VFree
+ubuntu-vg    1   4   0 wz--n- 18,22g  1,22g
+
+===== LVS =====
+
+$ sudo lvs
+
+LV          VG         Attr       LSize
+home        ubuntu-vg  -wi-a-----  2,00g
+ubuntu-lv   ubuntu-vg  -wi-a----- 10,00g
+var         ubuntu-vg  -wi-a-----  3,00g
+var_log     ubuntu-vg  -wi-a-----  2,00g
