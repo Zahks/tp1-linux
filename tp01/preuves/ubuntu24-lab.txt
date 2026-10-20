@@ -1,1 +1,72 @@
+===== C.2 - Première vérification après démarrage =====
 
+----- hostnamectl -----
+
+Static hostname: mon01
+Virtualization: vmware
+Operating System: Ubuntu 24.04.5 LTS
+Kernel: Linux 6.8.0-142-generic
+Architecture: x86-64
+Hardware Vendor: VMware, Inc.
+
+----- /etc/os-release -----
+
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+
+----- uname -r -----
+
+6.8.0-142-generic
+
+----- systemctl --failed -----
+
+0 loaded units listed.
+
+----- Services actifs (extrait) -----
+
+apache2.service
+cron.service
+dbus.service
+fwupd.service
+ModemManager.service
+mysql.service
+open-vm-tools.service
+polkit.service
+rsyslog.service
+systemd-journald.service
+systemd-logind.service
+systemd-networkd.service
+systemd-resolved.service
+systemd-timesyncd.service
+udisks2.service
+unattended-upgrades.service
+
+===== C.3 - Locale, fuseau horaire et synchronisation =====
+
+----- localectl status -----
+
+System Locale: LANG=fr_FR.UTF-8
+X11 Layout: fr
+X11 Variant: azerty
+
+----- locale -a | grep -i fr_FR -----
+
+fr_FR.utf8
+
+----- timedatectl status -----
+
+Time zone: Europe/Paris (CEST, +0200)
+System clock synchronized: yes
+NTP service: active
+RTC in local TZ: no
+
+===== Observations =====
+
+Aucune unité systemd en échec n'a été détectée.
+La locale française est configurée.
+Le fuseau horaire est configuré sur Europe/Paris.
+La synchronisation NTP fonctionne correctement.
