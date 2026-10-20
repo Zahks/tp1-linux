@@ -1,1 +1,73 @@
+===== C.2 - Première vérification après démarrage =====
 
+Date : 2026-10-20T18:21:06+02:00
+
+----- hostnamectl -----
+
+Static hostname: n/a
+Transient hostname: localhost
+Virtualization: vmware
+Operating System: Red Hat Enterprise Linux 9.0 (Plow)
+Kernel: Linux 5.14.0-70.22.1.el9_0.x86_64
+Architecture: x86-64
+Hardware Vendor: VMware, Inc.
+
+----- /etc/os-release -----
+
+NAME="Red Hat Enterprise Linux"
+VERSION="9.0 (Plow)"
+ID="rhel"
+VERSION_ID="9.0"
+PRETTY_NAME="Red Hat Enterprise Linux 9.0 (Plow)"
+
+----- uname -r -----
+
+5.14.0-70.22.1.el9_0.x86_64
+
+----- systemctl --failed -----
+
+NetworkManager-wait-online.service
+
+----- Services actifs (extrait) -----
+
+accounts-daemon.service
+auditd.service
+chronyd.service
+crond.service
+firewalld.service
+NetworkManager.service
+rsyslog.service
+sshd.service
+systemd-journald.service
+systemd-logind.service
+
+===== C.3 - Locale, fuseau horaire et synchronisation =====
+
+----- localectl status -----
+
+System Locale: LANG=fr_FR.UTF-8
+VC Keymap: fr-oss
+X11 Layout: fr
+X11 Variant: oss
+
+----- locale -a | grep -i fr_FR -----
+
+fr_FR
+fr_FR@euro
+fr_FR.iso88591
+fr_FR.iso885915@euro
+fr_FR.utf8
+
+----- timedatectl status -----
+
+Local time: Europe/Paris (CEST)
+System clock synchronized: yes
+NTP service: active
+RTC in local TZ: no
+
+===== Observations =====
+
+La locale française est disponible.
+Le fuseau horaire est configuré sur Europe/Paris.
+La synchronisation NTP est active.
+Une unité systemd en échec a été observée : NetworkManager-wait-online.service.
