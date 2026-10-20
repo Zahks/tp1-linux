@@ -4,9 +4,13 @@
 
 ### Actions réalisées
 
+
 - Création du dépôt GitHub
-- Installation de RHEL 9
-- Installation de Ubuntu 24.04
+- Création des machines virtuelles rhel9-lab et ubuntu24-lab.
+- Vérification des ressources allouées (CPU, mémoire, disque).
+- Configuration des interfaces réseau NAT et réseau interne.
+- Vérification des machines dans VMware.
+
 
 ### Difficultés rencontrées
 
