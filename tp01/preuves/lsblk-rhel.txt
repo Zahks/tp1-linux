@@ -41,3 +41,30 @@ root    rhel -wi-ao---- 6,00g
 swap    rhel -wi-ao---- 2,00g
 var     rhel -wi-ao---- 5,00g
 var_log rhel -wi-ao---- 3,00g
+
+
+===== DF =====
+
+df -hT
+
+Sys. de fichiers         Type     Taille Utilisé Dispo Uti% Monté sur
+devtmpfs                 devtmpfs   844M       0  844M   0% /dev
+tmpfs                    tmpfs      875M       0  875M   0% /dev/shm
+tmpfs                    tmpfs      350M     15M  335M   5% /run
+/dev/mapper/rhel-root    xfs        6,0G    3,7G  2,4G  62% /
+/dev/mapper/rhel-var     xfs        5,0G    187M  4,9G   4% /var
+/dev/nvme0n1p2           xfs       1014M    254M  761M  25% /boot
+/dev/nvme0n1p1           vfat       599M    7,0M  592M   2% /boot/efi
+/dev/mapper/rhel-home    xfs        2,0G    108M  1,9G   6% /home
+/dev/mapper/rhel-var_log xfs        3,0G     70M  3,0G   3% /var/log
+
+===== SWAPON =====
+swapon --show
+NAME      TYPE      SIZE   USED PRIO
+/dev/dm-1 partition   2G 366,5M   -2
+
+===== FINDMNT =====
+findmnt --target /var/log
+
+TARGET   SOURCE                   FSTYPE OPTIONS
+/var/log /dev/mapper/rhel-var_log xfs    rw,relatime,seclabel,...
