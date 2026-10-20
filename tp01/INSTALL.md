@@ -15,17 +15,30 @@
 
 ## 3. Partitionnement appliqué
 
-| Volume | Point de montage | Type |
-|----------|----------|----------|
-| nvme0n1p1 | /boot/efi | vfat |
-| nvme0n1p2 | /boot | xfs |
-| rhel-root | / | xfs |
-| rhel-var | /var | xfs |
-| rhel-var_log | /var/log | xfs |
-| rhel-home | /home | xfs |
-| rhel-swap | swap | swap |
+| Volume      | Point de montage | Type |
+|-------------|------------------|------|
+| nvme0n1p1   | /boot/efi        | vfat |
+| nvme0n1p2   | /boot            | xfs  |
+| rhel-root   | /                | xfs  |
+| rhel-var    | /var             | xfs  |
+| rhel-var_log| /var/log         | xfs  |
+| rhel-home   | /home            | xfs  |
+| rhel-swap   | swap             | swap |
 
-Le partitionnement a été réalisé en utilisant LVM afin de faciliter l’extension des volumes logiques lors des opérations d’administration futures.
+### Volumes logiques (LVM)
+
+| Volume logique | Taille |
+|----------------|---------|
+| root | 6 Gio |
+| var | 5 Gio |
+| var_log | 3 Gio |
+| home | 2 Gio |
+| swap | 2 Gio |
+
+Le partitionnement a été réalisé avec LVM afin de permettre une gestion flexible du stockage et un éventuel agrandissement des volumes logiques. Les tailles ont été adaptées à la capacité disponible du disque virtuel tout en conservant la séparation fonctionnelle des différents espaces du système.
+
+En raison de la capacité limitée du disque virtuel, la quasi-totalité de l'espace disponible a été allouée aux volumes logiques. L'espace libre restant dans le groupe de volumes est donc limité.
+
 ## 4. Installation
 
 ## 5. Mises à jour
