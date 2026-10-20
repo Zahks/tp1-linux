@@ -1,1 +1,43 @@
+===== LSBLK =====
 
+lsblk -f
+
+NAME FSTYPE FSVER LABEL UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
+sr0  iso966 Jolie RHEL-9-0-0-BaseOS-x86_64
+                        2022-08-05-06-19-40-00                       0   100% /run/media/ops/RHEL-9-0-0-BaseOS-x86_64
+nvme0n1
+│                                                                             
+├─nvme0n1p1
+│    vfat   FAT32       7293-B263                               591,8M     1% /boot/efi
+├─nvme0n1p2
+│    xfs                72dc60c0-6aa7-4a51-ae99-5ea227fd794a    760,9M    25% /boot
+└─nvme0n1p3
+     LVM2_m LVM2        CUhQ3d-cfkh-n5wo-Ffx6-Nfj5-h0I0-WaZrcn                
+  ├─rhel-root
+  │  xfs                c5477b58-7ed6-48ba-83b7-7fb945872754      2,3G    61% /
+  ├─rhel-swap
+  │  swap   1           6f496857-e51c-49b9-a1e0-8ead5b73b514                  [SWAP]
+  ├─rhel-var
+  │  xfs                380ed2bb-7aed-41fd-94cf-88916a0736cf      4,8G     4% /var
+  ├─rhel-var_log
+  │  xfs                75796ff7-49ab-4963-a4c0-df1b5827ed01      2,9G     2% /var/log
+  └─rhel-home
+     xfs                9cfc2b6a-cbe2-4e88-beb3-9a5d230d0e99      1,9G     5% /home
+
+===== VGS =====
+
+sudo vgs
+
+VG   #PV #LV #SN Attr   VSize  VFree
+rhel   1   5   0 wz--n- 18,00g 4,00m
+
+===== LVS =====
+
+sudo lvs
+
+LV      VG   Attr       LSize
+home    rhel -wi-ao---- 2,00g
+root    rhel -wi-ao---- 6,00g
+swap    rhel -wi-ao---- 2,00g
+var     rhel -wi-ao---- 5,00g
+var_log rhel -wi-ao---- 3,00g
