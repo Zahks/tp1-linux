@@ -63,8 +63,27 @@ En raison de la capacité limitée du disque virtuel, la quasi-totalité de l'es
 
 Le partitionnement a été réalisé avec LVM afin de faciliter l'administration du stockage. Un espace libre de 1,22 Gio a été conservé dans le groupe de volumes pour les futurs agrandissements.
 
-
 ## 4. Installation
+
+### RHEL 9
+
+- Installation minimale réalisée.
+- Red Hat Enterprise Linux 9.0 (Plow).
+- Architecture x86_64.
+- Locale : fr_FR.UTF-8.
+- Fuseau horaire : Europe/Paris.
+- Synchronisation NTP active.
+- Service en échec observé : NetworkManager-wait-online.service.
+
+### Ubuntu 24.04
+
+- Installation minimale réalisée.
+- Ubuntu 24.04.5 LTS (Noble Numbat).
+- Architecture x86_64.
+- Locale : fr_FR.UTF-8.
+- Fuseau horaire : Europe/Paris.
+- Synchronisation NTP active.
+- Aucune unité systemd en échec détectée.
 
 ## 5. Mises à jour
 
