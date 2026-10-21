@@ -68,3 +68,28 @@ findmnt --target /var/log
 
 TARGET   SOURCE                   FSTYPE OPTIONS
 /var/log /dev/mapper/rhel-var_log xfs    rw,relatime,seclabel,...
+
+
+==================================================
+D.1 - VERROUILLAGE DU COMPTE ROOT
+==================================================
+
+Commande :
+
+sudo passwd -l root
+
+Résultat :
+
+Verrouillage du mot de passe pour l'utilisateur root.
+passwd: Succès
+
+Vérification :
+
+sudo passwd -S root
+
+root LK 1969-12-31 0 99999 7 -1 (Mot de passe verrouillé.)
+
+Observation :
+
+Le compte root est verrouillé.
+Les opérations administratives seront réalisées via sudo à partir d'un compte nominatif.
