@@ -201,3 +201,29 @@ Observation :
 Le pare-feu UFW est actif.
 Le service OpenSSH est explicitement autorisé.
 L'accès distant reste autorisé après activation du pare-feu.
+
+
+Commande :
+
+sudo ufw status verbose
+
+Résultat :
+
+Status: active
+
+Logging: on (low)
+
+Default:
+deny (incoming)
+allow (outgoing)
+disabled (routed)
+
+22/tcp (OpenSSH) ALLOW IN Anywhere
+22/tcp (OpenSSH (v6)) ALLOW IN Anywhere (v6)
+
+Observation :
+
+Le pare-feu UFW est actif.
+Les connexions entrantes sont refusées par défaut.
+Le service OpenSSH est explicitement autorisé.
+L'accès distant reste possible après activation du pare-feu.
