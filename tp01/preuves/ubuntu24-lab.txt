@@ -147,3 +147,29 @@ Observation :
 
 Le compte root est verrouillé.
 Les opérations administratives seront réalisées via sudo à partir d'un compte nominatif.
+
+==================================================
+D.2 - COMPTE NOMINATIF ET DÉLÉGATION
+==================================================
+
+Création du compte :
+
+sudo useradd -m -c "Florin Awountsac" florinadmin
+
+Ajout au groupe d'administration :
+
+sudo usermod -aG sudo florinadmin
+
+Vérification :
+
+id florinadmin
+
+Résultat :
+
+uid=1001(florinadmin)
+gid=1001(florinadmin)
+groups=1001(florinadmin),27(sudo)
+
+Observation :
+
+Le compte florinadmin appartient au groupe sudo et peut recevoir les privilèges administrateur via sudo.
