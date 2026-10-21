@@ -282,7 +282,28 @@ Interprétation :
 Cette configuration est conforme aux recommandations du TP pour RHEL 9.
 ## 7. Pare-feu
 
-*À compléter lors de la Partie D.5 (firewalld sur RHEL et UFW sur Ubuntu).*
+### RHEL 9
+
+Le pare-feu Firewalld a été utilisé.
+
+Commandes exécutées :
+
+```bash
+sudo firewall-cmd --permanent --add-service=ssh
+sudo firewall-cmd --reload
+sudo firewall-cmd --list-all
+```
+
+Résultat :
+
+```text
+public (active)
+services: cockpit dhcpv6-client ssh
+```
+
+Le service SSH était déjà autorisé dans la configuration du pare-feu.
+
+Une nouvelle connexion SSH a été réalisée avec succès après vérification afin de confirmer qu'aucune coupure d'accès n'avait été provoquée.
 
 ## 8. Écarts entre les deux distributions
 
