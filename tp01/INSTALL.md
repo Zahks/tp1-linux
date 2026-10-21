@@ -282,6 +282,8 @@ Interprétation :
 Cette configuration est conforme aux recommandations du TP pour RHEL 9.
 ## 7. Pare-feu
 
+## 7. Pare-feu
+
 ### RHEL 9
 
 Le pare-feu Firewalld a été utilisé.
@@ -303,8 +305,6 @@ services: cockpit dhcpv6-client ssh
 
 Le service SSH était déjà autorisé dans la configuration du pare-feu.
 
-Une nouvelle connexion SSH a été réalisée avec succès après vérification afin de confirmer qu'aucune coupure d'accès n'avait été provoquée.
-
 ### Ubuntu 24.04
 
 Le pare-feu UFW a été utilisé.
@@ -314,6 +314,25 @@ Commandes exécutées :
 ```bash
 sudo ufw allow OpenSSH
 sudo ufw enable
+sudo ufw status verbose
+```
+
+Résultat :
+
+```text
+Status: active
+
+22/tcp (OpenSSH) ALLOW IN Anywhere
+22/tcp (OpenSSH (v6)) ALLOW IN Anywhere (v6)
+```
+
+Le service OpenSSH a été explicitement autorisé.
+
+### Vérification
+
+Après activation des pare-feu, les connexions SSH ont été vérifiées afin de s'assurer que l'administration distante restait possible.
+
+Cette étape permet d'éviter une perte d'accès au serveur après modification des règles de filtrage.
 
 ## 8. Écarts entre les deux distributions
 
