@@ -235,6 +235,12 @@ Empreinte de la clé :
 ```text
 SHA256:KaMc8fNsWCqsGi+6pUQf1CiwBqBF+MB81knsOVJk8tI
 ```
+La clé publique a été déployée sur les serveurs.
+
+Une connexion SSH a ensuite été réalisée avec succès à l'aide de l'authentification par clé.
+
+Cette vérification a été effectuée avant toute modification du service SSH conformément aux recommandations du sujet.
+
 ### Test de connexion distante
 
 Depuis le poste d'administration Windows, une connexion SSH a été réalisée avec succès :
