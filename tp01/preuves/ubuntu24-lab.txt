@@ -173,3 +173,31 @@ groups=1001(florinadmin),27(sudo)
 Observation :
 
 Le compte florinadmin appartient au groupe sudo et peut recevoir les privilèges administrateur via sudo.
+
+
+==================================================
+D.5 - PARE-FEU
+==================================================
+
+Commande :
+
+sudo ufw allow OpenSSH
+
+Résultat :
+
+Rules updated
+Rules updated (v6)
+
+Commande :
+
+sudo ufw enable
+
+Résultat :
+
+Firewall is active and enabled on system startup
+
+Observation :
+
+Le pare-feu UFW est actif.
+Le service OpenSSH est explicitement autorisé.
+L'accès distant reste autorisé après activation du pare-feu.
