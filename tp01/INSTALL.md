@@ -305,6 +305,16 @@ Le service SSH était déjà autorisé dans la configuration du pare-feu.
 
 Une nouvelle connexion SSH a été réalisée avec succès après vérification afin de confirmer qu'aucune coupure d'accès n'avait été provoquée.
 
+### Ubuntu 24.04
+
+Le pare-feu UFW a été utilisé.
+
+Commandes exécutées :
+
+```bash
+sudo ufw allow OpenSSH
+sudo ufw enable
+
 ## 8. Écarts entre les deux distributions
 
 | Opération | RHEL 9 | Ubuntu 24.04 | Justification |
