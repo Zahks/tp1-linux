@@ -123,3 +123,27 @@ Observation :
 
 Les dépôts Ubuntu sont accessibles.
 Des mises à jour sont disponibles.
+
+
+==================================================
+D.1 - VERROUILLAGE DU COMPTE ROOT
+==================================================
+
+Commande :
+
+sudo passwd -l root
+
+Résultat :
+
+passwd: password changed.
+
+Vérification :
+
+sudo passwd -S root
+
+root L 2025-08-05 0 99999 7 -1
+
+Observation :
+
+Le compte root est verrouillé.
+Les opérations administratives seront réalisées via sudo à partir d'un compte nominatif.
