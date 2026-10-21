@@ -71,3 +71,39 @@ La locale française est disponible.
 Le fuseau horaire est configuré sur Europe/Paris.
 La synchronisation NTP est active.
 Une unité systemd en échec a été observée : NetworkManager-wait-online.service.
+
+==================================================
+C.4 - MISES À JOUR ET DÉPÔTS
+==================================================
+
+Commande exécutée :
+
+sudo dnf -y update
+
+Résultat :
+
+Le système n'est pas inscrit auprès d'un serveur de droits d'accès.
+Utilisez subscription-manager pour l'inscrire.
+
+Erreur :
+Aucun dépôt disponible.
+
+Vérification de l'historique :
+
+sudo dnf history | head -20
+
+ID     | Ligne de commande | Date et heure    | Action(s) | Modifié
+-------------------------------------------------------------------
+1      |                   | 2026-09-30 08:08 | Install   | 1191 EE
+
+Vérification des dépôts :
+
+sudo dnf repolist
+
+Résultat :
+Aucun dépôt disponible.
+
+Observation :
+
+La machine RHEL 9 n'est pas enregistrée auprès du service de souscription Red Hat.
+Les mises à jour n'ont donc pas pu être appliquées car aucun dépôt n'était accessible.
