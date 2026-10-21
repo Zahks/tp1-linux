@@ -195,6 +195,26 @@ sudo
 
 Les tâches d'administration sont désormais réalisées par l'intermédiaire de comptes nominatifs et du mécanisme sudo.
 
+### Vérification de la délégation
+
+La délégation des privilèges a été testée après ouverture d'une nouvelle session avec le compte `florinadmin`.
+
+Commandes utilisées :
+
+```bash
+groups
+sudo -l
+```
+
+Résultat :
+
+- RHEL : appartenance au groupe `wheel`
+- Ubuntu : appartenance au groupe `sudo`
+
+Observation :
+
+L'ajout à un groupe n'est effectif qu'après reconnexion de l'utilisateur. Ce comportement a été observé et vérifié sur les deux distributions.
+
 ## 7. Pare-feu
 
 *À compléter lors de la Partie D.5 (firewalld sur RHEL et UFW sur Ubuntu).*
