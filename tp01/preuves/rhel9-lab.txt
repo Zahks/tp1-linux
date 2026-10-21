@@ -194,3 +194,19 @@ Observation :
 
 L'appartenance au groupe wheel est prise en compte après ouverture d'une nouvelle session.
 La délégation des privilèges fonctionne correctement.
+
+
+==================================================
+D.2 - OBSERVATION
+==================================================
+
+L'ajout d'un utilisateur dans un groupe d'administration n'est pris en compte qu'après ouverture d'une nouvelle session.
+
+Cette vérification a été réalisée avec le compte florinadmin.
+
+La délégation des privilèges a été validée avec la commande :
+
+sudo -l 
+
+Même chose pour ubuntu. 
+
