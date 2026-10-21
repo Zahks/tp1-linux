@@ -142,6 +142,15 @@ Un nouveau noyau Linux (6.8.0-147-generic) a été installé. Un redémarrage es
 
 ## 6. Comptes et accès distant
 
+### Verrouillage du compte root
+
+Sur les deux distributions, le compte root a été verrouillé afin d'empêcher les connexions directes et de favoriser l'utilisation de comptes nominatifs avec délégation de privilèges.
+
+Commande utilisée :
+
+```bash
+sudo passwd -l root
+
 ## 7. Pare-feu
 
 ## 8. Écarts entre les deux distributions
