@@ -107,3 +107,28 @@ Observation :
 
 La machine RHEL 9 n'est pas enregistrée auprès du service de souscription Red Hat.
 Les mises à jour n'ont donc pas pu être appliquées car aucun dépôt n'était accessible.
+
+
+==================================================
+D.1 - VERROUILLAGE DU COMPTE ROOT
+==================================================
+
+Commande :
+
+sudo passwd -l root
+
+Résultat :
+
+Verrouillage du mot de passe pour l'utilisateur root.
+passwd: Succès
+
+Vérification :
+
+sudo passwd -S root
+
+root LK 1969-12-31 0 99999 7 -1 (Mot de passe verrouillé.)
+
+Observation :
+
+Le compte root est verrouillé.
+Les opérations administratives seront réalisées via sudo à partir d'un compte nominatif.
