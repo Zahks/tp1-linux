@@ -258,6 +258,28 @@ Cette vérification a permis de confirmer :
 - l'authentification du compte nominatif ;
 - la possibilité d'administrer le serveur à distance.
 
+### Restriction de l'accès root par SSH
+
+La configuration SSH a été vérifiée avec la commande :
+
+```bash
+sudo sshd -T | grep -Ei 'permitrootlogin|passwordauthentication'
+```
+
+Résultat observé :
+
+```text
+permitrootlogin without-password
+passwordauthentication yes
+```
+
+Interprétation :
+
+- la connexion SSH directe du compte root par mot de passe est interdite ;
+- l'authentification par mot de passe reste autorisée pour les comptes utilisateurs ;
+- l'administration distante est réalisée via le compte nominatif `florinadmin`.
+
+Cette configuration est conforme aux recommandations du TP pour RHEL 9.
 ## 7. Pare-feu
 
 *À compléter lors de la Partie D.5 (firewalld sur RHEL et UFW sur Ubuntu).*
