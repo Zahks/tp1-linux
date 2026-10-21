@@ -278,3 +278,44 @@ La connexion directe du compte root par mot de passe est déjà interdite.
 
 L'authentification par mot de passe reste autorisée pour les autres utilisateurs, conformément aux consignes du TP.
 
+
+==================================================
+D.5 - PARE-FEU
+==================================================
+
+Commande :
+
+sudo firewall-cmd --permanent --add-service=ssh
+
+Résultat :
+
+Warning: ALREADY_ENABLED: ssh
+success
+
+Commande :
+
+sudo firewall-cmd --reload
+
+Résultat :
+
+success
+
+Commande :
+
+sudo firewall-cmd --list-all
+
+Résultat :
+
+public (active)
+
+services:
+- cockpit
+- dhcpv6-client
+- ssh
+
+Observation :
+
+Le pare-feu Firewalld est actif.
+Le service SSH est explicitement autorisé.
+La connexion distante reste accessible après rechargement de la configuration.
+
