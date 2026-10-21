@@ -236,6 +236,28 @@ Empreinte de la clé :
 SHA256:KaMc8fNsWCqsGi+6pUQf1CiwBqBF+MB81knsOVJk8tI
 ```
 
+==================================================
+D.3 - ACCES DISTANT
+==================================================
+
+Depuis le poste d'administration Windows :
+
+ssh florinadmin@192.168.80.140
+
+Résultat :
+
+Connexion SSH réussie.
+
+Le serveur a été ajouté à la liste des hôtes connus :
+
+192.168.80.140
+
+Une session distante a été ouverte avec succès sous le compte florinadmin.
+
+Observation :
+
+Une seconde session a été ouverte afin de vérifier le bon fonctionnement de l'accès distant avant toute modification du service SSH.
+
 ## 7. Pare-feu
 
 *À compléter lors de la Partie D.5 (firewalld sur RHEL et UFW sur Ubuntu).*
