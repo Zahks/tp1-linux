@@ -282,8 +282,6 @@ Interprétation :
 Cette configuration est conforme aux recommandations du TP pour RHEL 9.
 ## 7. Pare-feu
 
-## 7. Pare-feu
-
 ### RHEL 9
 
 Le pare-feu Firewalld a été utilisé.
