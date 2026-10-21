@@ -2,6 +2,26 @@
 
 ## 1. Périmètre
 
+Ce TP a pour objectif la mise en place de deux serveurs Linux administrés en ligne de commande :
+
+- un serveur Red Hat Enterprise Linux 9 (rhel9-lab) ;
+- un serveur Ubuntu Server 24.04 LTS (ubuntu24-lab).
+
+Les systèmes ont été installés dans des machines virtuelles VMware Workstation avec une configuration matérielle comparable afin de pouvoir comparer les pratiques d'administration entre les deux distributions.
+
+Les objectifs du TP sont :
+
+- réaliser une installation minimale sans interface graphique ;
+- mettre en œuvre un partitionnement basé sur LVM ;
+- appliquer les mises à jour système disponibles ;
+- configurer la locale française et le fuseau horaire Europe/Paris ;
+- sécuriser les accès administratifs ;
+- configurer l'accès distant par SSH ;
+- activer et vérifier le pare-feu ;
+- documenter l'ensemble des opérations afin de garantir la reproductibilité de l'installation.
+
+Les preuves techniques associées aux différentes étapes sont conservées dans le répertoire `tp01/preuves/`.
+
 ## 2. Ressources des machines virtuelles
 
 | Paramètre | rhel9-lab | ubuntu24-lab |
