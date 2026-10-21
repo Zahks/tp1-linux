@@ -87,6 +87,59 @@ Le partitionnement a été réalisé avec LVM afin de faciliter l'administration
 
 ## 5. Mises à jour
 
+### RHEL 9
+
+Commande exécutée :
+
+```bash
+sudo dnf -y update
+```
+
+La mise à jour n'a pas pu être effectuée car le système n'était pas enregistré auprès du service de souscription Red Hat.
+
+Message obtenu :
+
+```text
+Le système n'est pas inscrit auprès un serveur de droits d'accès.
+```
+
+Aucun dépôt n'était disponible.
+
+L'historique DNF a néanmoins été vérifié :
+
+```bash
+sudo dnf history
+```
+
+Une entrée d'installation datée du 30/09/2026 est présente.
+
+### Ubuntu 24.04
+
+Les commandes suivantes ont été exécutées :
+
+```bash
+sudo apt update
+sudo apt -y full-upgrade
+```
+
+Les dépôts Ubuntu étaient accessibles et plusieurs paquets ont été mis à jour.
+
+Les mises à jour ont notamment concerné :
+
+- open-vm-tools
+- open-vm-tools-desktop
+- thermald
+- snapd
+- ca-certificates
+
+L'historique des paquets a été vérifié dans :
+
+```bash
+/var/log/apt/history.log
+```
+
+Un nouveau noyau Linux (6.8.0-147-generic) a été installé. Un redémarrage est nécessaire pour le charger.
+
 ## 6. Comptes et accès distant
 
 ## 7. Pare-feu
