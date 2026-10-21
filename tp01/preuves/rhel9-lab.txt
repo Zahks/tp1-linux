@@ -232,4 +232,30 @@ Observation :
 
 Une seconde session a été ouverte afin de vérifier le bon fonctionnement de l'accès distant avant toute modification du service SSH.
 
+==================================================
+D.3 - ACCES DISTANT PAR CLE
+==================================================
+
+Génération d'une paire de clés :
+
+ssh-keygen -t ed25519 -a 100 -C "florin@lab"
+
+Déploiement de la clé publique sur le serveur.
+
+Fichiers utilisés :
+
+~/.ssh/id_ed25519
+~/.ssh/id_ed25519.pub
+
+Test :
+
+ssh florinadmin@192.168.80.140
+
+Résultat :
+
+Connexion SSH réussie via authentification par clé.
+
+Observation :
+
+Une seconde session a été ouverte et testée avant toute modification de la configuration SSH.
 
