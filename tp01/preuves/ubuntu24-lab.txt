@@ -70,3 +70,56 @@ Aucune unité systemd en échec n'a été détectée.
 La locale française est configurée.
 Le fuseau horaire est configuré sur Europe/Paris.
 La synchronisation NTP fonctionne correctement.
+
+==================================================
+C.4 - MISES À JOUR ET DÉPÔTS
+==================================================
+
+Commande exécutée :
+
+sudo apt update
+
+Résultat :
+
+Lecture des listes de paquets...
+Fait
+
+23 paquets peuvent être mis à jour.
+
+Vérification :
+
+apt list --upgradable
+
+Exemples de paquets proposés à la mise à jour :
+
+apparmor
+ca-certificates
+open-vm-tools
+open-vm-tools-desktop
+snapd
+thermald
+xserver-common
+xz-utils
+
+Historique APT :
+
+Start-Date: 2026-10-20 15:50:57
+Commandline: /usr/bin/unattended-upgrade
+End-Date: 2026-10-20 15:51:00
+
+Start-Date: 2026-10-20 15:51:04
+Commandline: /usr/bin/unattended-upgrade
+End-Date: 2026-10-20 15:51:04
+
+Start-Date: 2026-10-20 15:51:07
+Commandline: /usr/bin/unattended-upgrade
+End-Date: 2026-10-20 15:51:11
+
+Start-Date: 2026-10-20 15:51:14
+Commandline: /usr/bin/unattended-upgrade
+End-Date: 2026-10-20 15:51:15
+
+Observation :
+
+Les dépôts Ubuntu sont accessibles.
+Des mises à jour sont disponibles.
