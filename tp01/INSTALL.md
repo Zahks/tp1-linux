@@ -215,6 +215,27 @@ Observation :
 
 L'ajout à un groupe n'est effectif qu'après reconnexion de l'utilisateur. Ce comportement a été observé et vérifié sur les deux distributions.
 
+### Authentification par clé SSH
+
+Une paire de clés ED25519 a été générée depuis le poste d'administration.
+
+Commande utilisée :
+
+```bash
+ssh-keygen -t ed25519 -a 100 -C "florin@lab"
+```
+
+Résultat :
+
+- Clé privée : `id_ed25519`
+- Clé publique : `id_ed25519.pub`
+
+Empreinte de la clé :
+
+```text
+SHA256:KaMc8fNsWCqsGi+6pUQf1CiwBqBF+MB81knsOVJk8tI
+```
+
 ## 7. Pare-feu
 
 *À compléter lors de la Partie D.5 (firewalld sur RHEL et UFW sur Ubuntu).*
