@@ -146,6 +146,20 @@ Un nouveau noyau Linux (6.8.0-147-generic) a été installé. Un redémarrage es
 
 ## 8. Écarts entre les deux distributions
 
+## 8. Écarts entre les deux distributions
+
+| Opération | RHEL 9 | Ubuntu 24.04 | Justification |
+|------------|------------|------------|------------|
+| Gestionnaire de paquets | dnf | apt | Outils natifs différents |
+| Historique des paquets | dnf history | /var/log/apt/history.log | Méthode de traçabilité différente |
+| Dépôts | Dépend de subscription-manager | Disponibles immédiatement | Politique de distribution différente |
+| Mise à jour système | Impossible sans enregistrement Red Hat | Fonctionnelle immédiatement | Gestion des licences différente |
+| Locale | fr_FR.UTF-8 | fr_FR.UTF-8 | Configuration similaire |
+| Synchronisation horaire | chronyd | systemd-timesyncd | Services différents |
+| Groupe d'administration | wheel | sudo | Convention propre à chaque distribution |
+| Système de fichiers racine | xfs | ext4 | Choix par défaut de la distribution |
+
+
 ## 9. Incidents et corrections
 
 ## 10. Reconstruction rapide
