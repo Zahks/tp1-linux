@@ -150,10 +150,35 @@ Commande utilisée :
 
 ```bash
 sudo passwd -l root
+```
+
+Commande de vérification :
+
+```bash
+sudo passwd -S root
+```
+
+Résultat obtenu :
+
+- RHEL 9 : `LK` (Locked)
+- Ubuntu 24.04 : `L` (Locked)
+
+Le compte root n'est donc plus utilisable pour une authentification directe.
+
+---
+
+### Comptes administrateurs
+
+Les opérations d'administration sont réalisées à partir de comptes nominatifs utilisant `sudo`.
+
+- RHEL 9 : délégation via le groupe `wheel`
+- Ubuntu 24.04 : délégation via le groupe `sudo`
+
+Cette approche améliore la traçabilité des actions d'administration et évite l'utilisation d'un compte partagé.
 
 ## 7. Pare-feu
 
-## 8. Écarts entre les deux distributions
+*À compléter lors de la Partie D.5 (firewalld sur RHEL et UFW sur Ubuntu).*
 
 ## 8. Écarts entre les deux distributions
 
@@ -168,7 +193,80 @@ sudo passwd -l root
 | Groupe d'administration | wheel | sudo | Convention propre à chaque distribution |
 | Système de fichiers racine | xfs | ext4 | Choix par défaut de la distribution |
 
-
 ## 9. Incidents et corrections
 
+### Problème de dépôts RHEL
+
+La machine RHEL 9 n'était pas enregistrée auprès des services Red Hat.
+
+Conséquences :
+
+- Impossible d'effectuer les mises à jour via `dnf update`
+- Aucun dépôt disponible
+- Impossible d'activer EPEL
+
+Diagnostic obtenu :
+
+```text
+Le système n'est pas inscrit auprès un serveur de droits d'accès.
+```
+
+### Erreur de syntaxe lors de la mise à jour Ubuntu
+
+La commande suivante a été saisie par erreur :
+
+```bash
+sudo -apt -y full-upgrade
+```
+
+Correction appliquée :
+
+```bash
+sudo apt -y full-upgrade
+```
+
+La mise à jour a ensuite été exécutée correctement.
+
+### Service en échec sur RHEL
+
+Le service suivant apparaissait en échec :
+
+```text
+NetworkManager-wait-online.service
+```
+
+Le fonctionnement réseau restant opérationnel, l'incident a été documenté sans impact sur les manipulations réalisées.
+
 ## 10. Reconstruction rapide
+
+### RHEL 9
+
+1. Créer la machine virtuelle.
+2. Configurer le partitionnement LVM.
+3. Créer les volumes :
+   - root
+   - var
+   - var_log
+   - home
+   - swap
+4. Configurer la locale française.
+5. Configurer le fuseau horaire Europe/Paris.
+6. Verrouiller le compte root.
+7. Créer un compte administrateur dans le groupe wheel.
+8. Configurer le pare-feu.
+
+### Ubuntu 24.04
+
+1. Créer la machine virtuelle.
+2. Configurer le partitionnement LVM.
+3. Créer les volumes :
+   - ubuntu-lv
+   - var
+   - var_log
+   - home
+4. Configurer la locale française.
+5. Configurer le fuseau horaire Europe/Paris.
+6. Appliquer les mises à jour système.
+7. Verrouiller le compte root.
+8. Créer un compte administrateur dans le groupe sudo.
+9. Configurer le pare-feu.
