@@ -259,3 +259,22 @@ Observation :
 
 Une seconde session a été ouverte et testée avant toute modification de la configuration SSH.
 
+==================================================
+D.4 - VERIFICATION DE LA CONFIGURATION SSH
+==================================================
+
+Commande :
+
+sudo sshd -T | grep -Ei 'permitrootlogin|passwordauthentication'
+
+Résultat :
+
+permitrootlogin without-password
+passwordauthentication yes
+
+Observation :
+
+La connexion directe du compte root par mot de passe est déjà interdite.
+
+L'authentification par mot de passe reste autorisée pour les autres utilisateurs, conformément aux consignes du TP.
+
