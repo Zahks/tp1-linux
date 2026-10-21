@@ -159,3 +159,38 @@ groupes=1001(florinadmin),10(wheel)
 Observation :
 
 Le compte florinadmin appartient au groupe wheel et peut recevoir les privilèges administrateur via sudo.
+
+==================================================
+D.2 - TEST DE LA DÉLÉGATION
+==================================================
+
+Définition du mot de passe :
+
+sudo passwd florinadmin
+
+Changement de session :
+
+su - florinadmin
+
+Vérification des groupes :
+
+groups
+
+Résultat :
+
+florinadmin wheel
+
+Vérification sudo :
+
+sudo -l
+
+Résultat :
+
+L'utilisateur florinadmin peut utiliser les commandes suivantes sur localhost :
+
+(ALL) ALL
+
+Observation :
+
+L'appartenance au groupe wheel est prise en compte après ouverture d'une nouvelle session.
+La délégation des privilèges fonctionne correctement.
