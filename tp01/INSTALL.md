@@ -235,7 +235,22 @@ Empreinte de la clé :
 ```text
 SHA256:KaMc8fNsWCqsGi+6pUQf1CiwBqBF+MB81knsOVJk8tI
 ```
+### Test de connexion distante
 
+Depuis le poste d'administration Windows, une connexion SSH a été réalisée avec succès :
+
+```bash
+ssh florinadmin@192.168.80.140
+```
+
+Une seconde session a été ouverte avant toute modification de la configuration SSH conformément aux recommandations du sujet.
+
+Cette vérification a permis de confirmer :
+
+- le bon fonctionnement du service SSH ;
+- l'accessibilité du serveur sur le réseau ;
+- l'authentification du compte nominatif ;
+- la possibilité d'administrer le serveur à distance.
 
 ## 7. Pare-feu
 
