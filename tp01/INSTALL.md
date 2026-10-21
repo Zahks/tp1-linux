@@ -144,7 +144,7 @@ Un nouveau noyau Linux (6.8.0-147-generic) a été installé. Un redémarrage es
 
 ### Verrouillage du compte root
 
-Sur les deux distributions, le compte root a été verrouillé afin d'empêcher les connexions directes et de favoriser l'utilisation de comptes nominatifs avec délégation de privilèges.
+Sur les deux distributions, le compte root a été verrouillé afin d'empêcher les connexions directes.
 
 Commande utilisée :
 
@@ -158,23 +158,42 @@ Commande de vérification :
 sudo passwd -S root
 ```
 
-Résultat obtenu :
+Résultats :
 
-- RHEL 9 : `LK` (Locked)
-- Ubuntu 24.04 : `L` (Locked)
+- RHEL 9 : statut `LK`
+- Ubuntu 24.04 : statut `L`
 
-Le compte root n'est donc plus utilisable pour une authentification directe.
+### Comptes nominatifs
 
----
+Un compte nominatif `florinadmin` a été créé sur les deux systèmes.
 
-### Comptes administrateurs
+#### RHEL 9
 
-Les opérations d'administration sont réalisées à partir de comptes nominatifs utilisant `sudo`.
+```bash
+sudo useradd -m -c "Florin Awountsac" florinadmin
+sudo usermod -aG wheel florinadmin
+```
 
-- RHEL 9 : délégation via le groupe `wheel`
-- Ubuntu 24.04 : délégation via le groupe `sudo`
+Le compte a été ajouté au groupe :
 
-Cette approche améliore la traçabilité des actions d'administration et évite l'utilisation d'un compte partagé.
+```text
+wheel
+```
+
+#### Ubuntu 24.04
+
+```bash
+sudo useradd -m -c "Florin Awountsac" florinadmin
+sudo usermod -aG sudo florinadmin
+```
+
+Le compte a été ajouté au groupe :
+
+```text
+sudo
+```
+
+Les tâches d'administration sont désormais réalisées par l'intermédiaire de comptes nominatifs et du mécanisme sudo.
 
 ## 7. Pare-feu
 
@@ -192,6 +211,7 @@ Cette approche améliore la traçabilité des actions d'administration et évite
 | Synchronisation horaire | chronyd | systemd-timesyncd | Services différents |
 | Groupe d'administration | wheel | sudo | Convention propre à chaque distribution |
 | Système de fichiers racine | xfs | ext4 | Choix par défaut de la distribution |
+| Verrouillage root | passwd -l root | passwd -l root | Même commande, même objectif |
 
 ## 9. Incidents et corrections
 
