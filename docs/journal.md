@@ -28,8 +28,8 @@ Le volume /var/log est probablement le premier candidat à un agrandissement car
 
 ### Difficultés rencontrées
 
-- Compréhension des consignes
+- Compréhension des consignes, les autres difficultés à voir dans les parties respectives. 
 
 ### Temps passé
 
-- À compléter
+-Entre 4 à 6 heures au total
